@@ -16,14 +16,14 @@ import seedu.address.commons.events.ui.RecordPanelSelectionChangedEvent;
 import seedu.address.model.record.Record;
 
 /**
- * Panel containing the list of persons.
+ * Panel containing the list of records.
  */
 public class RecordListPanel extends UiPart<Region> {
     private static final String FXML = "RecordListPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(RecordListPanel.class);
 
     @FXML
-    private ListView<Record> personListView;
+    private ListView<Record> recordListView;
 
     public RecordListPanel(ObservableList<Record> recordList) {
         super(FXML);
@@ -32,13 +32,13 @@ public class RecordListPanel extends UiPart<Region> {
     }
 
     private void setConnections(ObservableList<Record> recordList) {
-        personListView.setItems(recordList);
-        personListView.setCellFactory(listView -> new PersonListViewCell());
+        recordListView.setItems(recordList);
+        recordListView.setCellFactory(listView -> new RecordListViewCell());
         setEventHandlerForSelectionChangeEvent();
     }
 
     private void setEventHandlerForSelectionChangeEvent() {
-        personListView.getSelectionModel().selectedItemProperty()
+        recordListView.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> {
                     if (newValue != null) {
                         logger.fine("Selection in record list panel changed to : '" + newValue + "'");
@@ -52,8 +52,8 @@ public class RecordListPanel extends UiPart<Region> {
      */
     private void scrollTo(int index) {
         Platform.runLater(() -> {
-            personListView.scrollTo(index);
-            personListView.getSelectionModel().clearAndSelect(index);
+            recordListView.scrollTo(index);
+            recordListView.getSelectionModel().clearAndSelect(index);
         });
     }
 
@@ -66,7 +66,7 @@ public class RecordListPanel extends UiPart<Region> {
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Record} using a {@code RecordCard}.
      */
-    class PersonListViewCell extends ListCell<Record> {
+    class RecordListViewCell extends ListCell<Record> {
         @Override
         protected void updateItem(Record record, boolean empty) {
             super.updateItem(record, empty);

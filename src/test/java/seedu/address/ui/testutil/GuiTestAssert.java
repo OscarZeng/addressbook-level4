@@ -29,7 +29,7 @@ public class GuiTestAssert {
     /**
      * Asserts that {@code actualCard} displays the details of {@code expectedRecord}.
      */
-    public static void assertCardDisplaysPerson(Record expectedRecord, RecordCardHandle actualCard) {
+    public static void assertCardDisplaysRecord(Record expectedRecord, RecordCardHandle actualCard) {
         assertEquals(expectedRecord.getName().fullName, actualCard.getName());
         assertEquals(expectedRecord.getPhone().value, actualCard.getPhone());
         assertEquals(expectedRecord.getEmail().value, actualCard.getEmail());
@@ -45,7 +45,7 @@ public class GuiTestAssert {
     public static void assertListMatching(RecordListPanelHandle recordListPanelHandle, Record... records) {
         for (int i = 0; i < records.length; i++) {
             recordListPanelHandle.navigateToCard(i);
-            assertCardDisplaysPerson(records[i], recordListPanelHandle.getRecordCardHandle(i));
+            assertCardDisplaysRecord(records[i], recordListPanelHandle.getRecordCardHandle(i));
         }
     }
 
