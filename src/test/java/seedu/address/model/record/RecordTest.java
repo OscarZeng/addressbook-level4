@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DAYPARAM_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.testutil.TypicalRecords.ALICE;
 import static seedu.address.testutil.TypicalRecords.BOB;
@@ -35,25 +35,25 @@ public class RecordTest {
         // null -> returns false
         assertFalse(ALICE.isSameRecord(null));
 
-        // different phone and email -> returns false
-        Record editedAlice = new RecordBuilder(ALICE).withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).build();
+        // different day parameter and email -> returns false
+        Record editedAlice = new RecordBuilder(ALICE).withDayParam(VALID_DAYPARAM_BOB).withEmail(VALID_EMAIL_BOB).build();
         assertFalse(ALICE.isSameRecord(editedAlice));
 
         // different name -> returns false
         editedAlice = new RecordBuilder(ALICE).withName(VALID_NAME_BOB).build();
         assertFalse(ALICE.isSameRecord(editedAlice));
 
-        // same name, same phone, different attributes -> returns true
+        // same name, same day parameter, different attributes -> returns true
         editedAlice = new RecordBuilder(ALICE).withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB)
                 .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSameRecord(editedAlice));
 
         // same name, same email, different attributes -> returns true
-        editedAlice = new RecordBuilder(ALICE).withPhone(VALID_PHONE_BOB).withAddress(VALID_ADDRESS_BOB)
+        editedAlice = new RecordBuilder(ALICE).withDayParam(VALID_DAYPARAM_BOB).withAddress(VALID_ADDRESS_BOB)
                 .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSameRecord(editedAlice));
 
-        // same name, same phone, same email, different attributes -> returns true
+        // same name, same day parameter, same email, different attributes -> returns true
         editedAlice = new RecordBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSameRecord(editedAlice));
     }
@@ -80,8 +80,8 @@ public class RecordTest {
         Record editedAlice = new RecordBuilder(ALICE).withName(VALID_NAME_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
-        // different phone -> returns false
-        editedAlice = new RecordBuilder(ALICE).withPhone(VALID_PHONE_BOB).build();
+        // different day parameter -> returns false
+        editedAlice = new RecordBuilder(ALICE).withDayParam(VALID_DAYPARAM_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
         // different email -> returns false

@@ -96,7 +96,7 @@ public class RecordListPanelTest extends GuiUnitTest {
         for (int i = 0; i < recordCount; i++) {
             builder.append("<records>\n");
             builder.append("<name>").append(i).append("a</name>\n");
-            builder.append("<phone>000</phone>\n");
+            builder.append("<dayParam>000</dayParam>\n");
             builder.append("<email>a@aa</email>\n");
             builder.append("<address>a</address>\n");
             builder.append("</records>\n");

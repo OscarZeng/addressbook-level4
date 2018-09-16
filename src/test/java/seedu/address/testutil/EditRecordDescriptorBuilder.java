@@ -10,7 +10,7 @@ import seedu.address.model.record.Address;
 import seedu.address.model.record.Email;
 import seedu.address.model.record.Name;
 import seedu.address.model.record.Record;
-import seedu.address.model.record.Phone;
+import seedu.address.model.record.DayParam;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -34,7 +34,7 @@ public class EditRecordDescriptorBuilder {
     public EditRecordDescriptorBuilder(Record record) {
         descriptor = new EditCommand.EditRecordDescriptor();
         descriptor.setName(record.getName());
-        descriptor.setPhone(record.getPhone());
+        descriptor.setDayParam(record.getDayParam());
         descriptor.setEmail(record.getEmail());
         descriptor.setAddress(record.getAddress());
         descriptor.setTags(record.getTags());
@@ -49,10 +49,10 @@ public class EditRecordDescriptorBuilder {
     }
 
     /**
-     * Sets the {@code Phone} of the {@code EditRecordDescriptor} that we are building.
+     * Sets the {@code dayParam} of the {@code EditRecordDescriptor} that we are building.
      */
-    public EditRecordDescriptorBuilder withPhone(String phone) {
-        descriptor.setPhone(new Phone(phone));
+    public EditRecordDescriptorBuilder withDayParam(String dayParam) {
+        descriptor.setDayParam(new DayParam(dayParam));
         return this;
     }
 

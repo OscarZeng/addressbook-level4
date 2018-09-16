@@ -22,7 +22,7 @@ public class GuiTestAssert {
         assertEquals(expectedCard.getAddress(), actualCard.getAddress());
         assertEquals(expectedCard.getEmail(), actualCard.getEmail());
         assertEquals(expectedCard.getName(), actualCard.getName());
-        assertEquals(expectedCard.getPhone(), actualCard.getPhone());
+        assertEquals(expectedCard.getDayParam(), actualCard.getDayParam());
         assertEquals(expectedCard.getTags(), actualCard.getTags());
     }
 
@@ -31,7 +31,7 @@ public class GuiTestAssert {
      */
     public static void assertCardDisplaysRecord(Record expectedRecord, RecordCardHandle actualCard) {
         assertEquals(expectedRecord.getName().fullName, actualCard.getName());
-        assertEquals(expectedRecord.getPhone().value, actualCard.getPhone());
+        assertEquals(expectedRecord.getDayParam().value, actualCard.getDayParam());
         assertEquals(expectedRecord.getEmail().value, actualCard.getEmail());
         assertEquals(expectedRecord.getAddress().value, actualCard.getAddress());
         assertEquals(expectedRecord.getTags().stream().map(tag -> tag.tagName).collect(Collectors.toList()),

@@ -2,55 +2,55 @@
 <addressbook>
     <records>
         <name>Hans Muster</name>
-        <phone isPrivate="false">9482424</phone>
+        <dayParam isPrivate="false">9482424</dayParam>
         <email isPrivate="false">hans@example.com</email>
         <address isPrivate="false">4th street</address>
     </records>
     <records>
         <name>Ruth Mueller</name>
-        <phone isPrivate="false">87249245</phone>
+        <dayParam isPrivate="false">87249245</dayParam>
         <email isPrivate="false">ruth@example.com</email>
         <address isPrivate="false">81th street</address>
     </records>
     <records>
         <name>Heinz Kurz</name>
-        <phone isPrivate="false">95352563</phone>
+        <dayParam isPrivate="false">95352563</dayParam>
         <email isPrivate="false">heinz@example.com</email>
         <address isPrivate="false">wall street</address>
     </records>
     <records>
         <name>Cornelia Meier</name>
-        <phone isPrivate="false">87652533</phone>
+        <dayParam isPrivate="false">87652533</dayParam>
         <email isPrivate="false">cornelia@example.com</email>
         <address isPrivate="false">10th street</address>
     </records>
     <records>
         <name>Werner Meyer</name>
-        <phone isPrivate="false">9482224</phone>
+        <dayParam isPrivate="false">9482224</dayParam>
         <email isPrivate="false">werner@example.com</email>
         <address isPrivate="false">michegan ave</address>
     </records>
     <records>
         <name>Lydia Kunz</name>
-        <phone isPrivate="false">9482427</phone>
+        <dayParam isPrivate="false">9482427</dayParam>
         <email isPrivate="false">lydia@example.com</email>
         <address isPrivate="false">little tokyo</address>
     </records>
     <records>
         <name>Anna Best</name>
-        <phone isPrivate="false">9482442</phone>
+        <dayParam isPrivate="false">9482442</dayParam>
         <email isPrivate="false">anna@example.com</email>
         <address isPrivate="false">4th street</address>
     </records>
     <records>
         <name>Stefan Meier</name>
-        <phone isPrivate="false">8482424</phone>
+        <dayParam isPrivate="false">8482424</dayParam>
         <email isPrivate="false">stefan@example.com</email>
         <address isPrivate="false">little india</address>
     </records>
     <records>
         <name>Martin Mueller</name>
-        <phone isPrivate="false">8482131</phone>
+        <dayParam isPrivate="false">8482131</dayParam>
         <email isPrivate="false">hans@example.com</email>
         <address isPrivate="false">chicago ave</address>
     </records>

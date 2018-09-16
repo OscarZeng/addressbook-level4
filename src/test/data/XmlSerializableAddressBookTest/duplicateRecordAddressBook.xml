@@ -3,7 +3,7 @@
 
     <records>
         <name>Alice Pauline</name>
-        <phone>94351253</phone>
+        <dayParam>94351253</dayParam>
         <email>alice@example.com</email>
         <address>123, Jurong West Ave 6, #08-111</address>
         <tagged>friends</tagged>
@@ -12,7 +12,7 @@
     <!-- Record with same identity as Alice Pauline -->
     <records>
         <name>Alice Pauline</name>
-        <phone>94351253</phone>
+        <dayParam>94351253</dayParam>
         <email>pauline@example.com</email>
         <address>4th street</address>
     </records>

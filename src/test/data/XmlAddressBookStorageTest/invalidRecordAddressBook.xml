@@ -3,7 +3,7 @@
     <!-- Record with invalid name field -->
     <records>
         <name>Ha!ns Mu@ster</name>
-        <phone isPrivate="false">9482424</phone>
+        <dayParam isPrivate="false">9482424</dayParam>
         <email isPrivate="false">hans@example.com</email>
         <address isPrivate="false">4th street</address>
     </records>

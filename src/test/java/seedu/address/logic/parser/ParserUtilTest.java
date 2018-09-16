@@ -19,7 +19,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.record.Address;
 import seedu.address.model.record.Email;
 import seedu.address.model.record.Name;
-import seedu.address.model.record.Phone;
+import seedu.address.model.record.DayParam;
 import seedu.address.model.tag.Tag;
 import seedu.address.testutil.Assert;
 
@@ -89,25 +89,25 @@ public class ParserUtilTest {
 
     @Test
     public void parsePhone_null_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parsePhone((String) null));
+        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseDayParam((String) null));
     }
 
     @Test
     public void parsePhone_invalidValue_throwsParseException() {
-        Assert.assertThrows(ParseException.class, () -> ParserUtil.parsePhone(INVALID_PHONE));
+        Assert.assertThrows(ParseException.class, () -> ParserUtil.parseDayParam(INVALID_PHONE));
     }
 
     @Test
     public void parsePhone_validValueWithoutWhitespace_returnsPhone() throws Exception {
-        Phone expectedPhone = new Phone(VALID_PHONE);
-        assertEquals(expectedPhone, ParserUtil.parsePhone(VALID_PHONE));
+        DayParam expectedDayParam = new DayParam(VALID_PHONE);
+        assertEquals(expectedDayParam, ParserUtil.parseDayParam(VALID_PHONE));
     }
 
     @Test
     public void parsePhone_validValueWithWhitespace_returnsTrimmedPhone() throws Exception {
         String phoneWithWhitespace = WHITESPACE + VALID_PHONE + WHITESPACE;
-        Phone expectedPhone = new Phone(VALID_PHONE);
-        assertEquals(expectedPhone, ParserUtil.parsePhone(phoneWithWhitespace));
+        DayParam expectedDayParam = new DayParam(VALID_PHONE);
+        assertEquals(expectedDayParam, ParserUtil.parseDayParam(phoneWithWhitespace));
     }
 
     @Test

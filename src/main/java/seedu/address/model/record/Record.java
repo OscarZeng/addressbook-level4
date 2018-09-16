@@ -17,7 +17,7 @@ public class Record {
 
     // Identity fields
     private final Name name;
-    private final Phone phone;
+    private final DayParam dayParam;
     private final Email email;
 
     // Data fields
@@ -27,10 +27,10 @@ public class Record {
     /**
      * Every field must be present and not null.
      */
-    public Record(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, tags);
+    public Record(Name name, DayParam dayParam, Email email, Address address, Set<Tag> tags) {
+        requireAllNonNull(name, dayParam, email, address, tags);
         this.name = name;
-        this.phone = phone;
+        this.dayParam = dayParam;
         this.email = email;
         this.address = address;
         this.tags.addAll(tags);
@@ -40,8 +40,8 @@ public class Record {
         return name;
     }
 
-    public Phone getPhone() {
-        return phone;
+    public DayParam getDayParam() {
+        return dayParam;
     }
 
     public Email getEmail() {
@@ -71,7 +71,7 @@ public class Record {
 
         return otherRecord != null
                 && otherRecord.getName().equals(getName())
-                && (otherRecord.getPhone().equals(getPhone()) || otherRecord.getEmail().equals(getEmail()));
+                && (otherRecord.getDayParam().equals(getDayParam()) || otherRecord.getEmail().equals(getEmail()));
     }
 
     /**
@@ -90,7 +90,7 @@ public class Record {
 
         Record otherRecord = (Record) other;
         return otherRecord.getName().equals(getName())
-                && otherRecord.getPhone().equals(getPhone())
+                && otherRecord.getDayParam().equals(getDayParam())
                 && otherRecord.getEmail().equals(getEmail())
                 && otherRecord.getAddress().equals(getAddress())
                 && otherRecord.getTags().equals(getTags());
@@ -99,15 +99,15 @@ public class Record {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, dayParam, email, address, tags);
     }
 
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append(getName())
-                .append(" Phone: ")
-                .append(getPhone())
+                .append(" Day : ")
+                .append(getDayParam())
                 .append(" Email: ")
                 .append(getEmail())
                 .append(" Address: ")

@@ -31,7 +31,8 @@ public class RecordCard extends UiPart<Region> {
     @FXML
     private Label id;
     @FXML
-    private Label phone;
+    private Label dayParam
+            ;
     @FXML
     private Label address;
     @FXML
@@ -44,7 +45,7 @@ public class RecordCard extends UiPart<Region> {
         this.record = record;
         id.setText(displayedIndex + ". ");
         name.setText(record.getName().fullName);
-        phone.setText(record.getPhone().value);
+        dayParam.setText(record.getDayParam().value);
         address.setText(record.getAddress().value);
         email.setText(record.getEmail().value);
         record.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
