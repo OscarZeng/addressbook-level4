@@ -37,7 +37,7 @@ public class XmlUtilTest {
     private static final String INVALID_DATE = "9482asf424";
 
     private static final String VALID_NAME = "Hans Muster";
-    private static final String VALID_DATE = "9482424";
+    private static final String VALID_DATE = "23-10-2010";
     private static final String VALID_EMAIL = "hans@example";
     private static final String VALID_ADDRESS = "4th street";
     private static final List<XmlAdaptedTag> VALID_TAGS = Collections.singletonList(new XmlAdaptedTag("friends"));

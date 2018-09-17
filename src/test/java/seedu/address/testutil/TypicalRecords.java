@@ -25,27 +25,27 @@ public class TypicalRecords {
 
     public static final Record ALICE = new RecordBuilder().withName("Alice Pauline")
             .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
-            .withDate("94351253")
+            .withDate("18-9-2012")
             .withTags("friends").build();
     public static final Record BENSON = new RecordBuilder().withName("Benson Meier")
             .withAddress("311, Clementi Ave 2, #02-25")
-            .withEmail("johnd@example.com").withDate("98765432")
+            .withEmail("johnd@example.com").withDate("18-12-2012")
             .withTags("owesMoney", "friends").build();
-    public static final Record CARL = new RecordBuilder().withName("Carl Kurz").withDate("95352563")
+    public static final Record CARL = new RecordBuilder().withName("Carl Kurz").withDate("10-12-2012")
             .withEmail("heinz@example.com").withAddress("wall street").build();
-    public static final Record DANIEL = new RecordBuilder().withName("Daniel Meier").withDate("87652533")
+    public static final Record DANIEL = new RecordBuilder().withName("Daniel Meier").withDate("10-1-2012")
             .withEmail("cornelia@example.com").withAddress("10th street").withTags("friends").build();
-    public static final Record ELLE = new RecordBuilder().withName("Elle Meyer").withDate("9482224")
+    public static final Record ELLE = new RecordBuilder().withName("Elle Meyer").withDate("10-1-2003")
             .withEmail("werner@example.com").withAddress("michegan ave").build();
-    public static final Record FIONA = new RecordBuilder().withName("Fiona Kunz").withDate("9482427")
+    public static final Record FIONA = new RecordBuilder().withName("Fiona Kunz").withDate("31-12-1996")
             .withEmail("lydia@example.com").withAddress("little tokyo").build();
-    public static final Record GEORGE = new RecordBuilder().withName("George Best").withDate("9482442")
+    public static final Record GEORGE = new RecordBuilder().withName("George Best").withDate("23-10-2010")
             .withEmail("anna@example.com").withAddress("4th street").build();
 
     // Manually added
-    public static final Record HOON = new RecordBuilder().withName("Hoon Meier").withDate("8482424")
+    public static final Record HOON = new RecordBuilder().withName("Hoon Meier").withDate("31-4-2080")
             .withEmail("stefan@example.com").withAddress("little india").build();
-    public static final Record IDA = new RecordBuilder().withName("Ida Mueller").withDate("8482131")
+    public static final Record IDA = new RecordBuilder().withName("Ida Mueller").withDate("4-10-2030")
             .withEmail("hans@example.com").withAddress("chicago ave").build();
 
     // Manually added - Record's details found in {@code CommandTestUtil}

@@ -11,7 +11,7 @@ public class Date {
 
 
     public static final String MESSAGE_DATE_CONSTRAINTS =
-            "Day parameter should only contain numbers, and it should be at least 3 digits long";
+            "Date parameter should be in the format of dd-mm-yyyy with dd and mm being 2 digits, and yyyy being 4 digits.";
     public static final String DATE_VALIDATION_REGEX = "\\d{3,}";
     public final String value;
 
