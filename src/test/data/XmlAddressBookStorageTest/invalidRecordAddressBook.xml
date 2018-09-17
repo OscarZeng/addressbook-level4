@@ -5,6 +5,6 @@
         <name>Ha!ns Mu@ster</name>
         <date isPrivate="false">10-12-1994</date>
         <email isPrivate="false">hans@example.com</email>
-        <expense isPrivate="false">4th street</expense>
+        <expense isPrivate="false">10.99</expense>
     </records>
 </addressbook>

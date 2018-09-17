@@ -19,7 +19,7 @@ public class RecordBuilder {
     public static final String DEFAULT_NAME = "Alice Pauline";
     public static final String DEFAULT_DATE = "01-01-2001";
     public static final String DEFAULT_EMAIL = "alice@gmail.com";
-    public static final String DEFAULT_EXPENSE = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_EXPENSE = "10.30";
 
     private Name name;
     private Date date;

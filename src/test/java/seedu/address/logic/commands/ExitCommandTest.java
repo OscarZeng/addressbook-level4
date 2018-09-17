@@ -63,7 +63,7 @@ public class ExitCommandTest {
         private static final String VALID_NAME = "Hans Muster";
         private static final String VALID_DATE = "23-10-2010";
         private static final String VALID_EMAIL = "hans@example";
-        private static final String VALID_EXPENSE = "4th street";
+        private static final String VALID_EXPENSE = "10.99";
         private static final List<XmlAdaptedTag> VALID_TAGS = Collections.singletonList(new XmlAdaptedTag("friends"));
 
         @Rule

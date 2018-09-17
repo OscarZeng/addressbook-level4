@@ -14,10 +14,10 @@ public class Expense {
 
 
     /*
-     * The first character of the expense must not be a whitespace,
-     * otherwise " " (a blank string) becomes a valid input.
+     * The first character of expense must not be a whitespace, there must be only 1
+     * '.' (dot) in the expense. Only digits and '.' are allowed.
      */
-    public static final String EXPENSE_VALIDATION_REGEX = "[^\\s].*";
+    public static final String EXPENSE_VALIDATION_REGEX = "\\d*";
 
     public final String value;
 

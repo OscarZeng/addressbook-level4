@@ -28,10 +28,14 @@ public class ExpenseTest {
         // invalid expense
         assertFalse(Expense.isValidExpense("")); // empty string
         assertFalse(Expense.isValidExpense(" ")); // spaces only
+        assertFalse(Expense.isValidExpense("Blk 456, Den Road, #01-355")); // letters
+        assertFalse(Expense.isValidExpense("-")); // symbols which is not '.'
+        assertFalse(Expense.isValidExpense("123.442.456")); // multiple decimal points
 
         // valid expense
-        assertTrue(Expense.isValidExpense("Blk 456, Den Road, #01-355"));
-        assertTrue(Expense.isValidExpense("-")); // one character
-        assertTrue(Expense.isValidExpense("Leng Inc; 1234 Market St; San Francisco CA 2349879; USA")); // long expense
+        assertTrue(Expense.isValidExpense("123456789.00")); // long expense
+        assertTrue(Expense.isValidExpense("12.30")); // standard expense
+        assertTrue(Expense.isValidExpense("12")); // no need for the decimal point and cents parameter
+        assertTrue(Expense.isValidExpense("123.0011")); // expense with decimal places greater than 2
     }
 }
