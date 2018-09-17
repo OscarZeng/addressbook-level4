@@ -10,14 +10,22 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Expense {
 
     public static final String MESSAGE_EXPENSE_CONSTRAINTS =
-            "Expenses can take any values, and it should not be blank";
-
+            "Expenses should consist of only digits and/or decimal points ('.')."
+            + "It must be of the following form <number>.<number>:\n"
+            + "1. <number> cannot start from '0' unless it has only 1 digit. There must be at least 1 digit in this field.\n"
+            + "2. At most 1 decimal point can be present. Decimal point is optional."
+            + "If decimal point is present, it must have at least 1 digit after it";
 
     /*
-     * The first character of expense must not be a whitespace, there must be only 1
-     * '.' (dot) in the expense. Only digits and '.' are allowed.
+     *  Expense must follow the format as stated above.
      */
-    public static final String EXPENSE_VALIDATION_REGEX = "\\d*";
+    // TODO: REFACTOR THIS TO MAKE IT LESS COMPLICATED
+    private static final String EXPENSE_WHOLENUMBER_ZERO_REGEX = "0";
+    private static final String EXPENSE_WHOLENUMBER_NONZERO_REGEX = "[1-9]{1}\\d*";
+    private static final String EXPENSE_DECIMALPART_REGEX = ".\\d+";
+    // EXPENSE_VALIDATION_REGEX = "^(0|[1-9]{1}\d*)($|.\d+)"
+    public static final String EXPENSE_VALIDATION_REGEX = "^" + "(" + EXPENSE_WHOLENUMBER_ZERO_REGEX + "|"
+            + EXPENSE_WHOLENUMBER_NONZERO_REGEX + ")" + "(" + "$" + "|" + EXPENSE_DECIMALPART_REGEX + ")";
 
     public final String value;
 
