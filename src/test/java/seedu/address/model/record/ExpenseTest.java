@@ -31,11 +31,15 @@ public class ExpenseTest {
         assertFalse(Expense.isValidExpense("Blk 456, Den Road, #01-355")); // letters
         assertFalse(Expense.isValidExpense("-")); // symbols which is not '.'
         assertFalse(Expense.isValidExpense("123.442.456")); // multiple decimal points
+        assertFalse(Expense.isValidExpense("01.23")); // whole number can only start with 0 if it is 1 digit
+        assertFalse(Expense.isValidExpense("1.")); // there must be at least 1 digit after the decimal point
+        assertFalse(Expense.isValidExpense(".1")); // there must be at least 1 digit before decimal point
 
         // valid expense
+        assertTrue(Expense.isValidExpense("0")); // 0 is valid
         assertTrue(Expense.isValidExpense("123456789.00")); // long expense
         assertTrue(Expense.isValidExpense("12.30")); // standard expense
-        assertTrue(Expense.isValidExpense("12")); // no need for the decimal point and cents parameter
+        assertTrue(Expense.isValidExpense("12")); // no need for the decimal point
         assertTrue(Expense.isValidExpense("123.0011")); // expense with decimal places greater than 2
     }
 }
