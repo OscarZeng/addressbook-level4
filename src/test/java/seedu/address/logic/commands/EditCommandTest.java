@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_DAYPARAM_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
@@ -58,11 +58,11 @@ public class EditCommandTest {
         Record lastRecord = model.getFilteredRecordList().get(indexLastRecord.getZeroBased());
 
         RecordBuilder recordInList = new RecordBuilder(lastRecord);
-        Record editedRecord = recordInList.withName(VALID_NAME_BOB).withDayParam(VALID_DAYPARAM_BOB)
+        Record editedRecord = recordInList.withName(VALID_NAME_BOB).withDate(VALID_DATE_BOB)
                 .withTags(VALID_TAG_HUSBAND).build();
 
         EditRecordDescriptor descriptor = new EditRecordDescriptorBuilder().withName(VALID_NAME_BOB)
-                .withDayParam(VALID_DAYPARAM_BOB).withTags(VALID_TAG_HUSBAND).build();
+                .withDate(VALID_DATE_BOB).withTags(VALID_TAG_HUSBAND).build();
         EditCommand editCommand = new EditCommand(indexLastRecord, descriptor);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_RECORD_SUCCESS, editedRecord);

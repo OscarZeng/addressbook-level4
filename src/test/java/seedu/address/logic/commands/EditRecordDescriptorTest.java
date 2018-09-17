@@ -7,7 +7,7 @@ import static seedu.address.logic.commands.CommandTestUtil.DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_DAYPARAM_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class EditRecordDescriptorTest {
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different day params -> returns false
-        editedAmy = new EditRecordDescriptorBuilder(DESC_AMY).withDayParam(VALID_DAYPARAM_BOB).build();
+        editedAmy = new EditRecordDescriptorBuilder(DESC_AMY).withDate(VALID_DATE_BOB).build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different email -> returns false

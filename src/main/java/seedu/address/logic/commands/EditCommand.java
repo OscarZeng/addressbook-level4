@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_DAYPARAM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DATE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_RECORDS;
 
@@ -24,7 +24,7 @@ import seedu.address.model.record.Address;
 import seedu.address.model.record.Email;
 import seedu.address.model.record.Name;
 import seedu.address.model.record.Record;
-import seedu.address.model.record.DayParam;
+import seedu.address.model.record.Date;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -39,12 +39,12 @@ public class EditCommand extends Command {
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_DAYPARAM + "DAYPARAM] "
+            + "[" + PREFIX_DATE + "DATE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_DAYPARAM + "91234567 "
+            + PREFIX_DATE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
 
     public static final String MESSAGE_EDIT_RECORD_SUCCESS = "Edited Record: %1$s";
@@ -96,12 +96,12 @@ public class EditCommand extends Command {
         assert recordToEdit != null;
 
         Name updatedName = editRecordDescriptor.getName().orElse(recordToEdit.getName());
-        DayParam updatedDayParam = editRecordDescriptor.getDayParam().orElse(recordToEdit.getDayParam());
+        Date updatedDate = editRecordDescriptor.getDate().orElse(recordToEdit.getDate());
         Email updatedEmail = editRecordDescriptor.getEmail().orElse(recordToEdit.getEmail());
         Address updatedAddress = editRecordDescriptor.getAddress().orElse(recordToEdit.getAddress());
         Set<Tag> updatedTags = editRecordDescriptor.getTags().orElse(recordToEdit.getTags());
 
-        return new Record(updatedName, updatedDayParam, updatedEmail, updatedAddress, updatedTags);
+        return new Record(updatedName, updatedDate, updatedEmail, updatedAddress, updatedTags);
     }
 
     @Override
@@ -128,7 +128,7 @@ public class EditCommand extends Command {
      */
     public static class EditRecordDescriptor {
         private Name name;
-        private DayParam dayParam;
+        private Date date;
         private Email email;
         private Address address;
         private Set<Tag> tags;
@@ -141,7 +141,7 @@ public class EditCommand extends Command {
          */
         public EditRecordDescriptor(EditRecordDescriptor toCopy) {
             setName(toCopy.name);
-            setDayParam(toCopy.dayParam);
+            setDate(toCopy.date);
             setEmail(toCopy.email);
             setAddress(toCopy.address);
             setTags(toCopy.tags);
@@ -151,7 +151,7 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, dayParam, email, address, tags);
+            return CollectionUtil.isAnyNonNull(name, date, email, address, tags);
         }
 
         public void setName(Name name) {
@@ -162,12 +162,12 @@ public class EditCommand extends Command {
             return Optional.ofNullable(name);
         }
 
-        public void setDayParam(DayParam dayParam) {
-            this.dayParam = dayParam;
+        public void setDate(Date date) {
+            this.date = date;
         }
 
-        public Optional<DayParam> getDayParam() {
-            return Optional.ofNullable(dayParam);
+        public Optional<Date> getDate() {
+            return Optional.ofNullable(date);
         }
 
         public void setEmail(Email email) {
@@ -219,7 +219,7 @@ public class EditCommand extends Command {
             EditRecordDescriptor e = (EditRecordDescriptor) other;
 
             return getName().equals(e.getName())
-                    && getDayParam().equals(e.getDayParam())
+                    && getDate().equals(e.getDate())
                     && getEmail().equals(e.getEmail())
                     && getAddress().equals(e.getAddress())
                     && getTags().equals(e.getTags());

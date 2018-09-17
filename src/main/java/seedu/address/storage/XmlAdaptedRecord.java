@@ -14,7 +14,7 @@ import seedu.address.model.record.Address;
 import seedu.address.model.record.Email;
 import seedu.address.model.record.Name;
 import seedu.address.model.record.Record;
-import seedu.address.model.record.DayParam;
+import seedu.address.model.record.Date;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -27,7 +27,7 @@ public class XmlAdaptedRecord {
     @XmlElement(required = true)
     private String name;
     @XmlElement(required = true)
-    private String dayParam;
+    private String date;
     @XmlElement(required = true)
     private String email;
     @XmlElement(required = true)
@@ -45,9 +45,9 @@ public class XmlAdaptedRecord {
     /**
      * Constructs an {@code XmlAdaptedRecord} with the given record details.
      */
-    public XmlAdaptedRecord(String name, String dayParam, String email, String address, List<XmlAdaptedTag> tagged) {
+    public XmlAdaptedRecord(String name, String date, String email, String address, List<XmlAdaptedTag> tagged) {
         this.name = name;
-        this.dayParam = dayParam;
+        this.date = date;
         this.email = email;
         this.address = address;
         if (tagged != null) {
@@ -62,7 +62,7 @@ public class XmlAdaptedRecord {
      */
     public XmlAdaptedRecord(Record source) {
         name = source.getName().fullName;
-        dayParam = source.getDayParam().value;
+        date = source.getDate().value;
         email = source.getEmail().value;
         address = source.getAddress().value;
         tagged = source.getTags().stream()
@@ -89,13 +89,13 @@ public class XmlAdaptedRecord {
         }
         final Name modelName = new Name(name);
 
-        if (dayParam == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, DayParam.class.getSimpleName()));
+        if (date == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Date.class.getSimpleName()));
         }
-        if (!DayParam.isValidDayParam(dayParam)) {
-            throw new IllegalValueException(DayParam.MESSAGE_DAYPARAM_CONSTRAINTS);
+        if (!Date.isValidDate(date)) {
+            throw new IllegalValueException(Date.MESSAGE_DATE_CONSTRAINTS);
         }
-        final DayParam modelDayParam = new DayParam(dayParam);
+        final Date modelDate = new Date(date);
 
         if (email == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName()));
@@ -114,7 +114,7 @@ public class XmlAdaptedRecord {
         final Address modelAddress = new Address(address);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Record(modelName, modelDayParam, modelEmail, modelAddress, modelTags);
+        return new Record(modelName, modelDate, modelEmail, modelAddress, modelTags);
     }
 
     @Override
@@ -129,7 +129,7 @@ public class XmlAdaptedRecord {
 
         XmlAdaptedRecord otherPerson = (XmlAdaptedRecord) other;
         return Objects.equals(name, otherPerson.name)
-                && Objects.equals(dayParam, otherPerson.dayParam)
+                && Objects.equals(date, otherPerson.date)
                 && Objects.equals(email, otherPerson.email)
                 && Objects.equals(address, otherPerson.address)
                 && tagged.equals(otherPerson.tagged);

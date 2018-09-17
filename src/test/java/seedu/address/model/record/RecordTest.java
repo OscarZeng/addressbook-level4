@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_DAYPARAM_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.testutil.TypicalRecords.ALICE;
 import static seedu.address.testutil.TypicalRecords.BOB;
@@ -36,7 +36,7 @@ public class RecordTest {
         assertFalse(ALICE.isSameRecord(null));
 
         // different day parameter and email -> returns false
-        Record editedAlice = new RecordBuilder(ALICE).withDayParam(VALID_DAYPARAM_BOB).withEmail(VALID_EMAIL_BOB).build();
+        Record editedAlice = new RecordBuilder(ALICE).withDate(VALID_DATE_BOB).withEmail(VALID_EMAIL_BOB).build();
         assertFalse(ALICE.isSameRecord(editedAlice));
 
         // different name -> returns false
@@ -49,7 +49,7 @@ public class RecordTest {
         assertTrue(ALICE.isSameRecord(editedAlice));
 
         // same name, same email, different attributes -> returns true
-        editedAlice = new RecordBuilder(ALICE).withDayParam(VALID_DAYPARAM_BOB).withAddress(VALID_ADDRESS_BOB)
+        editedAlice = new RecordBuilder(ALICE).withDate(VALID_DATE_BOB).withAddress(VALID_ADDRESS_BOB)
                 .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSameRecord(editedAlice));
 
@@ -81,7 +81,7 @@ public class RecordTest {
         assertFalse(ALICE.equals(editedAlice));
 
         // different day parameter -> returns false
-        editedAlice = new RecordBuilder(ALICE).withDayParam(VALID_DAYPARAM_BOB).build();
+        editedAlice = new RecordBuilder(ALICE).withDate(VALID_DATE_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
         // different email -> returns false

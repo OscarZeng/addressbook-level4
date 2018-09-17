@@ -7,7 +7,7 @@ import seedu.address.model.record.Address;
 import seedu.address.model.record.Email;
 import seedu.address.model.record.Name;
 import seedu.address.model.record.Record;
-import seedu.address.model.record.DayParam;
+import seedu.address.model.record.Date;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -17,19 +17,19 @@ import seedu.address.model.util.SampleDataUtil;
 public class RecordBuilder {
 
     public static final String DEFAULT_NAME = "Alice Pauline";
-    public static final String DEFAULT_DAYPARAM = "85355255";
+    public static final String DEFAULT_DATE = "85355255";
     public static final String DEFAULT_EMAIL = "alice@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
 
     private Name name;
-    private DayParam dayParam;
+    private Date date;
     private Email email;
     private Address address;
     private Set<Tag> tags;
 
     public RecordBuilder() {
         name = new Name(DEFAULT_NAME);
-        dayParam = new DayParam(DEFAULT_DAYPARAM);
+        date = new Date(DEFAULT_DATE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
         tags = new HashSet<>();
@@ -40,7 +40,7 @@ public class RecordBuilder {
      */
     public RecordBuilder(Record recordToCopy) {
         name = recordToCopy.getName();
-        dayParam = recordToCopy.getDayParam();
+        date = recordToCopy.getDate();
         email = recordToCopy.getEmail();
         address = recordToCopy.getAddress();
         tags = new HashSet<>(recordToCopy.getTags());
@@ -71,10 +71,10 @@ public class RecordBuilder {
     }
 
     /**
-     * Sets the {@code dayParam} of the {@code Record} that we are building.
+     * Sets the {@code date} of the {@code Record} that we are building.
      */
-    public RecordBuilder withDayParam(String dayParam) {
-        this.dayParam = new DayParam(dayParam);
+    public RecordBuilder withDate(String date) {
+        this.date = new Date(date);
         return this;
     }
 
@@ -87,7 +87,7 @@ public class RecordBuilder {
     }
 
     public Record build() {
-        return new Record(name, dayParam, email, address, tags);
+        return new Record(name, date, email, address, tags);
     }
 
 }

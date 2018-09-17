@@ -3,15 +3,15 @@
     <!-- Valid Record -->
     <records>
         <name>Hans Muster</name>
-        <dayParam isPrivate="false">9482424</dayParam>
+        <date isPrivate="false">9482424</date>
         <email isPrivate="false">hans@example.com</email>
         <address isPrivate="false">4th street</address>
     </records>
-    <!-- Record with invalid dayParam field -->
+    <!-- Record with invalid date field -->
     <records>
 
         <name>Hans Muster</name>
-        <dayParam isPrivate="false">948asdf2424</dayParam>
+        <date isPrivate="false">948asdf2424</date>
         <email isPrivate="false">hans@example.com</email>
         <address isPrivate="false">4th street</address>
     </records>

@@ -17,14 +17,14 @@ public class RecordCardHandle extends NodeHandle<Node> {
     private static final String ID_FIELD_ID = "#id";
     private static final String NAME_FIELD_ID = "#name";
     private static final String ADDRESS_FIELD_ID = "#address";
-    private static final String DAYPARAM_FIELD_ID = "#dayParam";
+    private static final String DATE_FIELD_ID = "#date";
     private static final String EMAIL_FIELD_ID = "#email";
     private static final String TAGS_FIELD_ID = "#tags";
 
     private final Label idLabel;
     private final Label nameLabel;
     private final Label addressLabel;
-    private final Label dayParamLabel;
+    private final Label dateLabel;
     private final Label emailLabel;
     private final List<Label> tagLabels;
 
@@ -34,7 +34,7 @@ public class RecordCardHandle extends NodeHandle<Node> {
         idLabel = getChildNode(ID_FIELD_ID);
         nameLabel = getChildNode(NAME_FIELD_ID);
         addressLabel = getChildNode(ADDRESS_FIELD_ID);
-        dayParamLabel = getChildNode(DAYPARAM_FIELD_ID);
+        dateLabel = getChildNode(DATE_FIELD_ID);
         emailLabel = getChildNode(EMAIL_FIELD_ID);
 
         Region tagsContainer = getChildNode(TAGS_FIELD_ID);
@@ -57,8 +57,8 @@ public class RecordCardHandle extends NodeHandle<Node> {
         return addressLabel.getText();
     }
 
-    public String getDayParam() {
-        return dayParamLabel.getText();
+    public String getDate() {
+        return dateLabel.getText();
     }
 
     public String getEmail() {
@@ -78,7 +78,7 @@ public class RecordCardHandle extends NodeHandle<Node> {
     public boolean equals(Record record) {
         return getName().equals(record.getName().fullName)
                 && getAddress().equals(record.getAddress().value)
-                && getDayParam().equals(record.getDayParam().value)
+                && getDate().equals(record.getDate().value)
                 && getEmail().equals(record.getEmail().value)
                 && ImmutableMultiset.copyOf(getTags()).equals(ImmutableMultiset.copyOf(record.getTags().stream()
                         .map(tag -> tag.tagName)

@@ -3,14 +3,14 @@
 <addressbook>
     <records>
         <name>Alice Pauline</name>
-        <dayParam>94351253</dayParam>
+        <date>94351253</date>
         <email>alice@example.com</email>
         <address>123, Jurong West Ave 6, #08-111</address>
         <tagged>friends</tagged>
     </records>
     <records>
         <name>Benson Meier</name>
-        <dayParam>98765432</dayParam>
+        <date>98765432</date>
         <email>johnd@example.com</email>
         <address>311, Clementi Ave 2, #02-25</address>
         <tagged>owesMoney</tagged>
@@ -18,32 +18,32 @@
     </records>
     <records>
         <name>Carl Kurz</name>
-        <dayParam>95352563</dayParam>
+        <date>95352563</date>
         <email>heinz@example.com</email>
         <address>wall street</address>
     </records>
     <records>
         <name>Daniel Meier</name>
-        <dayParam>87652533</dayParam>
+        <date>87652533</date>
         <email>cornelia@example.com</email>
         <address>10th street</address>
         <tagged>friends</tagged>
     </records>
     <records>
         <name>Elle Meyer</name>
-        <dayParam>9482224</dayParam>
+        <date>9482224</date>
         <email>werner@example.com</email>
         <address>michegan ave</address>
     </records>
     <records>
         <name>Fiona Kunz</name>
-        <dayParam>9482427</dayParam>
+        <date>9482427</date>
         <email>lydia@example.com</email>
         <address>little tokyo</address>
     </records>
     <records>
         <name>George Best</name>
-        <dayParam>9482442</dayParam>
+        <date>9482442</date>
         <email>anna@example.com</email>
         <address>4th street</address>
     </records>

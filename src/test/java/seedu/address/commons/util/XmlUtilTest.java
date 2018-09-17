@@ -34,10 +34,10 @@ public class XmlUtilTest {
     private static final Path VALID_RECORD_FILE = TEST_DATA_FOLDER.resolve("validRecord.xml");
     private static final Path TEMP_FILE = TestUtil.getFilePathInSandboxFolder("tempAddressBook.xml");
 
-    private static final String INVALID_PHONE = "9482asf424";
+    private static final String INVALID_DATE = "9482asf424";
 
     private static final String VALID_NAME = "Hans Muster";
-    private static final String VALID_PHONE = "9482424";
+    private static final String VALID_DATE = "9482424";
     private static final String VALID_EMAIL = "hans@example";
     private static final String VALID_ADDRESS = "4th street";
     private static final List<XmlAdaptedTag> VALID_TAGS = Collections.singletonList(new XmlAdaptedTag("friends"));
@@ -80,7 +80,7 @@ public class XmlUtilTest {
         XmlAdaptedRecord actualRecord = XmlUtil.getDataFromFile(
                 MISSING_RECORD_FIELD_FILE, XmlAdaptedRecordWithRootElement.class);
         XmlAdaptedRecord expectedRecord = new XmlAdaptedRecord(
-                null, VALID_PHONE, VALID_EMAIL, VALID_ADDRESS, VALID_TAGS);
+                null, VALID_DATE, VALID_EMAIL, VALID_ADDRESS, VALID_TAGS);
         assertEquals(expectedRecord, actualRecord);
     }
 
@@ -89,7 +89,7 @@ public class XmlUtilTest {
         XmlAdaptedRecord actualRecord = XmlUtil.getDataFromFile(
                 INVALID_RECORD_FIELD_FILE, XmlAdaptedRecordWithRootElement.class);
         XmlAdaptedRecord expectedRecord = new XmlAdaptedRecord(
-                VALID_NAME, INVALID_PHONE, VALID_EMAIL, VALID_ADDRESS, VALID_TAGS);
+                VALID_NAME, INVALID_DATE, VALID_EMAIL, VALID_ADDRESS, VALID_TAGS);
         assertEquals(expectedRecord, actualRecord);
     }
 
@@ -98,7 +98,7 @@ public class XmlUtilTest {
         XmlAdaptedRecord actualRecord = XmlUtil.getDataFromFile(
                 VALID_RECORD_FILE, XmlAdaptedRecordWithRootElement.class);
         XmlAdaptedRecord expectedRecord = new XmlAdaptedRecord(
-                VALID_NAME, VALID_PHONE, VALID_EMAIL, VALID_ADDRESS, VALID_TAGS);
+                VALID_NAME, VALID_DATE, VALID_EMAIL, VALID_ADDRESS, VALID_TAGS);
         assertEquals(expectedRecord, actualRecord);
     }
 
