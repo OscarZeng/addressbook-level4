@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Record's day parameter of any date in the address book.
+ * Represents a Record's date in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidDate(String)}
  */
 public class Date {
@@ -12,7 +12,7 @@ public class Date {
 
     public static final String MESSAGE_DATE_CONSTRAINTS =
             "Date parameter should be in the format of dd-mm-yyyy with dd and mm being 2 digits, and yyyy being 4 digits.";
-    public static final String DATE_VALIDATION_REGEX = "\\d{3,}";
+    public static final String DATE_VALIDATION_REGEX = "\\d{1,2}-\\d{1,2}-\\d{4}";
     public final String value;
 
     /**
