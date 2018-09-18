@@ -20,12 +20,12 @@ public class Expense {
      *  Expense must follow the format as stated above.
      */
     // TODO: REFACTOR THIS TO MAKE IT LESS COMPLICATED
-    private static final String EXPENSE_WHOLENUMBER_ZERO_REGEX = "0";
-    private static final String EXPENSE_WHOLENUMBER_NONZERO_REGEX = "[1-9]{1}\\d*";
-    private static final String EXPENSE_DECIMALPART_REGEX = ".\\d+";
+    private static final String EXPENSE_WHOLE_NUMBER_ZERO_REGEX = "0";
+    private static final String EXPENSE_WHOLE_NUMBER_NONZERO_REGEX = "[1-9]{1}\\d*";
+    private static final String EXPENSE_DECIMAL_PART_REGEX = ".\\d+";
     // EXPENSE_VALIDATION_REGEX = "^(0|[1-9]{1}\d*)($|.\d+)"
-    public static final String EXPENSE_VALIDATION_REGEX = "^" + "(" + EXPENSE_WHOLENUMBER_ZERO_REGEX + "|"
-            + EXPENSE_WHOLENUMBER_NONZERO_REGEX + ")" + "(" + "$" + "|" + EXPENSE_DECIMALPART_REGEX + ")";
+    public static final String EXPENSE_VALIDATION_REGEX = "^" + "(" + EXPENSE_WHOLE_NUMBER_ZERO_REGEX + "|"
+            + EXPENSE_WHOLE_NUMBER_NONZERO_REGEX + ")" + "(" + "$" + "|" + EXPENSE_DECIMAL_PART_REGEX + ")";
 
     public final String value;
 
