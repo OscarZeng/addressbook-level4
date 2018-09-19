@@ -23,9 +23,8 @@ public class Income {
     private static final String INCOME_WHOLE_NUMBER_NONZERO_REGEX = "[1-9]{1}\\d*";
     private static final String INCOME_DECIMAL_PART_REGEX = ".\\d+";
     // INCOME_VALIDATION_REGEX = "^(0|[1-9]{1}\d*)($|.\d+)"
-    /*public static final String INCOME_VALIDATION_REGEX = "^" + "(" + INCOME_WHOLE_NUMBER_ZERO_REGEX + "|"
-            + INCOME_WHOLE_NUMBER_NONZERO_REGEX + ")" + "(" + "$" + "|" + INCOME_DECIMAL_PART_REGEX + ")";*/
-    public static final String INCOME_VALIDATION_REGEX = "\\S";
+    public static final String INCOME_VALIDATION_REGEX = "^" + "(" + INCOME_WHOLE_NUMBER_ZERO_REGEX + "|"
+            + INCOME_WHOLE_NUMBER_NONZERO_REGEX + ")" + "(" + "$" + "|" + INCOME_DECIMAL_PART_REGEX + ")";
 
     public final String value;
 
