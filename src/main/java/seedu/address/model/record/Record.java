@@ -18,7 +18,7 @@ public class Record {
     // Identity fields
     private final Name name;
     private final Date date;
-    private final Email email;
+    private final Income income;
 
     // Data fields
     private final Expense expense;
@@ -27,11 +27,11 @@ public class Record {
     /**
      * Every field must be present and not null.
      */
-    public Record(Name name, Date date, Email email, Expense expense, Set<Tag> tags) {
-        requireAllNonNull(name, date, email, expense, tags);
+    public Record(Name name, Date date, Income income, Expense expense, Set<Tag> tags) {
+        requireAllNonNull(name, date, income, expense, tags);
         this.name = name;
         this.date = date;
-        this.email = email;
+        this.income = income;
         this.expense = expense;
         this.tags.addAll(tags);
     }
@@ -44,8 +44,8 @@ public class Record {
         return date;
     }
 
-    public Email getEmail() {
-        return email;
+    public Income getIncome() {
+        return income;
     }
 
     public Expense getExpense() {
@@ -71,7 +71,7 @@ public class Record {
 
         return otherRecord != null
                 && otherRecord.getName().equals(getName())
-                && (otherRecord.getDate().equals(getDate()) || otherRecord.getEmail().equals(getEmail()));
+                && (otherRecord.getDate().equals(getDate()) || otherRecord.getIncome().equals(getIncome()));
     }
 
     /**
@@ -91,7 +91,7 @@ public class Record {
         Record otherRecord = (Record) other;
         return otherRecord.getName().equals(getName())
                 && otherRecord.getDate().equals(getDate())
-                && otherRecord.getEmail().equals(getEmail())
+                && otherRecord.getIncome().equals(getIncome())
                 && otherRecord.getExpense().equals(getExpense())
                 && otherRecord.getTags().equals(getTags());
     }
@@ -99,7 +99,7 @@ public class Record {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, date, email, expense, tags);
+        return Objects.hash(name, date, income, expense, tags);
     }
 
     @Override
@@ -108,8 +108,8 @@ public class Record {
         builder.append(getName())
                 .append(" Day : ")
                 .append(getDate())
-                .append(" Email: ")
-                .append(getEmail())
+                .append(" Income: ")
+                .append(getIncome())
                 .append(" Expense: ")
                 .append(getExpense())
                 .append(" Tags: ");

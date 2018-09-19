@@ -36,7 +36,7 @@ public class RecordCard extends UiPart<Region> {
     @FXML
     private Label expense;
     @FXML
-    private Label email;
+    private Label income;
     @FXML
     private FlowPane tags;
 
@@ -47,7 +47,7 @@ public class RecordCard extends UiPart<Region> {
         name.setText(record.getName().fullName);
         date.setText(record.getDate().value);
         expense.setText(record.getExpense().value);
-        email.setText(record.getEmail().value);
+        income.setText(record.getIncome().value);
         record.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 
