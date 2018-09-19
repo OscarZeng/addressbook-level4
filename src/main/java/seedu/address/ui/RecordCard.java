@@ -40,14 +40,16 @@ public class RecordCard extends UiPart<Region> {
     @FXML
     private FlowPane tags;
 
+
+    // TODO: Currently, hardcoded. Create a class to handle formatting for UI purposes
     public RecordCard(Record record, int displayedIndex) {
         super(FXML);
         this.record = record;
         id.setText(displayedIndex + ". ");
         name.setText(record.getName().fullName);
-        date.setText(record.getDate().value);
-        expense.setText(record.getExpense().value);
-        income.setText(record.getIncome().value);
+        date.setText("Date: " + record.getDate().value);
+        expense.setText("Expense: " + record.getExpense().value);
+        income.setText("Income: " + record.getIncome().value);
         record.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 
