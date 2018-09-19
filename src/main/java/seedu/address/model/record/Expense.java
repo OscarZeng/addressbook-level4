@@ -24,10 +24,8 @@ public class Expense {
     private static final String EXPENSE_WHOLE_NUMBER_NONZERO_REGEX = "[1-9]{1}\\d*";
     private static final String EXPENSE_DECIMAL_PART_REGEX = ".\\d+";
     // EXPENSE_VALIDATION_REGEX = "^(0|[1-9]{1}\d*)($|.\d+)"
-    /* public static final String EXPENSE_VALIDATION_REGEX = "^" + "(" + EXPENSE_WHOLE_NUMBER_ZERO_REGEX + "|"
-            + EXPENSE_WHOLE_NUMBER_NONZERO_REGEX + ")" + "(" + "$" + "|" + EXPENSE_DECIMAL_PART_REGEX + ")"; */
-
-    public static final String EXPENSE_VALIDATION_REGEX = "\\S";
+    public static final String EXPENSE_VALIDATION_REGEX = "^" + "(" + EXPENSE_WHOLE_NUMBER_ZERO_REGEX + "|"
+            + EXPENSE_WHOLE_NUMBER_NONZERO_REGEX + ")" + "(" + "$" + "|" + EXPENSE_DECIMAL_PART_REGEX + ")";
 
     public final String value;
 
